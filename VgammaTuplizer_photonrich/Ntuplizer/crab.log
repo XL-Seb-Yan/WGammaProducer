@@ -1,0 +1,109 @@
+DEBUG 2019-06-14 16:02:12,814: 	 Executing command: 'submit'
+DEBUG 2019-06-14 16:02:12,814: 	 Found CRAB cache file /afs/cern.ch/user/x/xuyan/.crab3
+DEBUG 2019-06-14 16:02:12,850: 	 Checking credentials
+DEBUG 2019-06-14 16:02:12,851: 	 Found proxy file /tmp/x509up_u93529
+DEBUG 2019-06-14 16:02:12,851: 	 Getting proxy life time left
+DEBUG 2019-06-14 16:02:14,508: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93529 -timeleft
+ output : 603721
+
+ error: 
+ retcode : 0
+DEBUG 2019-06-14 16:02:16,160: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93529 -actimeleft
+ output : 603718
+
+ error: 
+ retcode : 0
+DEBUG 2019-06-14 16:02:16,161: 	 Proxy lifetime 603721 secs is different from voms extension lifetime 603718 secs for proxy: /tmp/x509up_u93529
+DEBUG 2019-06-14 16:02:16,161: 	 Proxy valid for 167:41:58 hours
+INFO 2019-06-14 16:02:16,179: 	 Will use CRAB configuration file crabconfigs/crab_2017SingleMuonB.py
+DEBUG 2019-06-14 16:02:16,179: 	 Loading CRAB configuration file.
+DEBUG 2019-06-14 16:02:22,054: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2019-06-14 16:02:22,055: 	 Working area '/afs/cern.ch/work/x/xuyan/work5/CMSSW_9_4_0/src/VgammaTuplizer/Ntuplizer/crab_jobs_2017B_Jun14_noHLTFilter_Jun22Data/crab_Wgamma94XSingleMuonTuplesPhotonrich_Jun14_Jun22Data_2017B' already exists 
+Please change the requestName in the config file
+ERROR 2019-06-14 16:02:22,055: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 161, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 146, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 34, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 315, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/ClientUtilities.py", line 404, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/x/xuyan/work5/CMSSW_9_4_0/src/VgammaTuplizer/Ntuplizer/crab_jobs_2017B_Jun14_noHLTFilter_Jun22Data/crab_Wgamma94XSingleMuonTuplesPhotonrich_Jun14_Jun22Data_2017B' already exists 
+Please change the requestName in the config file
+DEBUG 2019-06-14 16:14:26,187: 	 Executing command: 'status'
+DEBUG 2019-06-14 16:14:26,188: 	 Found CRAB cache file /afs/cern.ch/user/x/xuyan/.crab3
+ERROR 2019-06-14 16:14:26,194: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/x/xuyan/work5/CMSSW_9_4_0/src/VgammaTuplizer/Ntuplizer/crab_jobs_2017B_Jun14_noHLTFilter
+ERROR 2019-06-14 16:14:26,194: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 161, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 146, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 268, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 590, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 452, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/x/xuyan/work5/CMSSW_9_4_0/src/VgammaTuplizer/Ntuplizer/crab_jobs_2017B_Jun14_noHLTFilter
+DEBUG 2019-06-14 16:15:02,427: 	 Executing command: 'status'
+DEBUG 2019-06-14 16:15:02,427: 	 Found CRAB cache file /afs/cern.ch/user/x/xuyan/.crab3
+ERROR 2019-06-14 16:15:02,431: 	 Error: crab_jobs_2017B_Jun14_noHLTFilter/crab_Wgamma94XSingleMuonTuplesPhotonrich_Jun14_noHLTFilt is not a valid CRAB project directory.
+ERROR 2019-06-14 16:15:02,431: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 161, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 146, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 268, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 586, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_jobs_2017B_Jun14_noHLTFilter/crab_Wgamma94XSingleMuonTuplesPhotonrich_Jun14_noHLTFilt is not a valid CRAB project directory.
+DEBUG 2019-06-18 16:51:45,810: 	 Executing command: 'submit'
+DEBUG 2019-06-18 16:51:45,810: 	 Found CRAB cache file /afs/cern.ch/user/x/xuyan/.crab3
+DEBUG 2019-06-18 16:51:45,826: 	 Checking credentials
+DEBUG 2019-06-18 16:51:45,831: 	 Proxy file /tmp/x509up_u93529 not found
+DEBUG 2019-06-18 16:51:45,832: 	 Creating new proxy for 24:00 hours with VO group '' and VO role 'NULL'.
+DEBUG 2019-06-18 16:51:54,368: 	 Executing : 
+ command : voms-proxy-init -voms cms:/cms -valid 24:00 -rfc
+ output : None
+ error: None
+ retcode : 1
+DEBUG 2019-06-18 16:51:54,978: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u93529 -timeleft
+ output : 
+ error: Proxy not found: /tmp/x509up_u93529 (No such file or directory)
+
+ retcode : 1
+ERROR 2019-06-18 16:51:54,978: 	 Error while checking proxy timeleft for /tmp/x509up_u93529
+DEBUG 2019-06-18 16:51:55,585: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u93529 voms-proxy-info -fqan
+ output : 
+ error: Proxy not found: /tmp/x509up_u93529 (No such file or directory)
+
+ retcode : 1
+ERROR 2019-06-18 16:51:55,586: 	 Problems creating proxy.
+ERROR 2019-06-18 16:51:55,586: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 161, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 146, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 34, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 305, in __init__
+    self.proxyCreated = self.proxy.createNewVomsProxySimple(timeLeftThreshold = 720)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/CredentialInteractions.py", line 126, in createNewVomsProxySimple
+    raise ProxyCreationException("Problems creating proxy.")
+ProxyCreationException: Problems creating proxy.

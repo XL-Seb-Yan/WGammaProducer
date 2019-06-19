@@ -1,0 +1,9 @@
+*.pyc
+JEC/*
+JER/*
+Cert_*.txt
+*.root
+old
+old/*
+crab_jobs*
+Spring16_23Sep*
