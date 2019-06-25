@@ -9,10 +9,11 @@ import FWCore.ParameterSet.VarParsing as VarParsing
 process = cms.Process("Ntuple")
 process.load("Configuration.StandardSequences.MagneticField_cff")
 process.load('Configuration.Geometry.GeometryRecoDB_cff')
-process.TFileService = cms.Service("TFileService",fileName = cms.string('flatTuple_1520.root'))
+process.TFileService = cms.Service("TFileService",fileName = cms.string('flatTuple_photon.root'))
 options = VarParsing.VarParsing ('analysis')
 options.maxEvents = -1
-options.inputFiles = '/store/data/Run2017B/SinglePhoton/MINIAOD/31Mar2018-v1/90000/FE0443CC-A337-E811-881E-0CC47A7C351E.root'
+options.inputFiles = ('/store/data/Run2017B/SinglePhoton/MINIAOD/31Mar2018-v1/90000/FE0443CC-A337-E811-881E-0CC47A7C351E.root')
+##/store/data/Run2017B/SingleMuon/MINIAOD/31Mar2018-v1/90000/FADF3CBE-0D38-E811-82CB-0CC47A7C3572.root
 ##options.inputFiles = '/store/mc/RunIIFall17MiniAODv2/QCD_HT700to1000_TuneCP5_13TeV-madgraph-pythia8/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/10000/4C380206-3243-E811-B2E7-0025905B85AA.root'
 options.parseArguments()
 process.options  = cms.untracked.PSet(wantSummary = cms.untracked.bool(False),

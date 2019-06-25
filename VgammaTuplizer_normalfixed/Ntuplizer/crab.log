@@ -1,0 +1,74 @@
+DEBUG 2019-04-19 07:21:46,795: 	 Executing command: 'submit'
+DEBUG 2019-04-19 07:21:46,796: 	 Found CRAB cache file /afs/cern.ch/user/x/xuyan/.crab3
+DEBUG 2019-04-19 07:21:46,903: 	 Checking credentials
+DEBUG 2019-04-19 07:21:46,905: 	 Found proxy file /tmp/x509up_u93529
+DEBUG 2019-04-19 07:21:46,905: 	 Getting proxy life time left
+ERROR 2019-04-19 07:21:47,245: 	 Keyboard Interrupted
+DEBUG 2019-04-19 15:48:49,946: 	 Executing command: 'getoutput'
+DEBUG 2019-04-19 15:48:49,946: 	 Found CRAB cache file /afs/cern.ch/user/x/xuyan/.crab3
+ERROR 2019-04-19 15:48:49,947: 	 Error: crab is not a valid CRAB project directory.
+ERROR 2019-04-19 15:48:49,947: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 161, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 146, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 268, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 586, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab is not a valid CRAB project directory.
+DEBUG 2019-06-18 00:43:41,954: 	 Executing command: 'status'
+DEBUG 2019-06-18 00:43:41,955: 	 Found CRAB cache file /afs/cern.ch/user/x/xuyan/.crab3
+ERROR 2019-06-18 00:43:41,956: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/x/xuyan/work5/CMSSW_9_4_0/src/VgammaTuplizer/Ntuplizer/crab_jobs_2017B_Jun17
+ERROR 2019-06-18 00:43:41,956: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 161, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 146, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 268, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 590, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 452, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/x/xuyan/work5/CMSSW_9_4_0/src/VgammaTuplizer/Ntuplizer/crab_jobs_2017B_Jun17
+DEBUG 2019-06-19 20:39:51,527: 	 Executing command: 'status'
+DEBUG 2019-06-19 20:39:51,527: 	 Found CRAB cache file /afs/cern.ch/user/x/xuyan/.crab3
+ERROR 2019-06-19 20:39:51,558: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/x/xuyan/work5/CMSSW_9_4_0/src/VgammaTuplizer/Ntuplizer/crab_jobs_2017C_photonJun19
+ERROR 2019-06-19 20:39:51,558: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 161, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 146, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 268, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 590, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 452, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/x/xuyan/work5/CMSSW_9_4_0/src/VgammaTuplizer/Ntuplizer/crab_jobs_2017C_photonJun19
+DEBUG 2019-06-20 08:58:43,763: 	 Executing command: 'status'
+DEBUG 2019-06-20 08:58:43,790: 	 Found CRAB cache file /afs/cern.ch/user/x/xuyan/.crab3
+ERROR 2019-06-20 08:58:43,920: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/x/xuyan/work5/CMSSW_9_4_0/src/VgammaTuplizer/Ntuplizer/crab_jobs_2017F_muonJun17
+ERROR 2019-06-20 08:58:43,921: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 161, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/bin/crab", line 146, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 268, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 590, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1904/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 452, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/x/xuyan/work5/CMSSW_9_4_0/src/VgammaTuplizer/Ntuplizer/crab_jobs_2017F_muonJun17

@@ -625,6 +625,8 @@ public:
    std::vector<float>  jetAK8_puppi_tau1      ;
    std::vector<float>  jetAK8_puppi_tau2      ;
    std::vector<float>  jetAK8_puppi_tau3      ;
+   std::vector<bool>   jetAK8_puppi_IDTight      ;
+   std::vector<bool>   jetAK8_puppi_IDTightLepVeto      ;
    std::vector<float>  jetAK8_puppi_jecDown      ;
    std::vector<float>  jetAK8_puppi_softdrop_eta    ;
    std::vector<float>  jetAK8_puppi_softdrop_pt    ;
