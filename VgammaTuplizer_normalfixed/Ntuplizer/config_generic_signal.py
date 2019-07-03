@@ -11,7 +11,7 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
 process.load('Configuration.Geometry.GeometryRecoDB_cff')
 process.TFileService = cms.Service("TFileService",fileName = cms.string('flatTuple_2017sig_M1600_width5.root'))
 options = VarParsing.VarParsing ('analysis')
-options.maxEvents = -1
+options.maxEvents = 100
 options.parseArguments()
 process.options  = cms.untracked.PSet(wantSummary = cms.untracked.bool(False),
                                       SkipEvent = cms.untracked.vstring('ProductNotFound'),
@@ -20,9 +20,12 @@ process.options  = cms.untracked.PSet(wantSummary = cms.untracked.bool(False),
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(options.maxEvents) )
 process.source = cms.Source("PoolSource",
                             fileNames = cms.untracked.vstring('/store/mc/RunIIFall17MiniAODv2/PythiaChargedResonance_WGToJJG_M1600_width5/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/100000/B45E79A3-9432-E911-8FF5-AC1F6B0DE294.root',
-                                                              '/store/mc/RunIIFall17MiniAODv2/PythiaChargedResonance_WGToJJG_M1600_width5/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/10000/4C1BB0B2-B12A-E911-BCA9-90B11C443C96.root',
-                                                              '/store/mc/RunIIFall17MiniAODv2/PythiaChargedResonance_WGToJJG_M1600_width5/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/10000/8AA76743-B32A-E911-98E2-24BE05CEEC21.root',
-                                                              '/store/mc/RunIIFall17MiniAODv2/PythiaChargedResonance_WGToJJG_M1600_width5/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/10000/282884EF-B22A-E911-861D-00259090829A.root'),
+
+                      '/store/mc/RunIIFall17MiniAODv2/PythiaChargedResonance_WGToJJG_M1600_width5/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/10000/4C1BB0B2-B12A-E911-BCA9-90B11C443C96.root',
+
+                      '/store/mc/RunIIFall17MiniAODv2/PythiaChargedResonance_WGToJJG_M1600_width5/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/10000/282884EF-B22A-E911-861D-00259090829A.root',
+
+                      '/store/mc/RunIIFall17MiniAODv2/PythiaChargedResonance_WGToJJG_M1600_width5/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/10000/8AA76743-B32A-E911-98E2-24BE05CEEC21.root'),
 #                            eventsToProcess = cms.untracked.VEventRange('282917:76757818-282917:76757820'),
 #                            lumisToProcess = cms.untracked.VLuminosityBlockRange('282917:126'),
                             )

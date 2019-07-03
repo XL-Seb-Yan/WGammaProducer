@@ -797,8 +797,6 @@ void NtupleBranches::reset( void ){
   lheNb = 0;
   lheV_mass = 0;
     
- 
-
   /** photons */
   ph_N = 0;
   ph_pdgId.clear();

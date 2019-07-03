@@ -24,65 +24,65 @@
 Ntuplizer::Ntuplizer(const edm::ParameterSet& iConfig):
 
 
-	vtxToken_             	    (consumes<reco::VertexCollection>(iConfig.getParameter<edm::InputTag>("vertices"))),
-	rhoToken_             	    (consumes<double>(iConfig.getParameter<edm::InputTag>("rho"))),
-	packedpfcandidatesToken_    (consumes<std::vector<pat::PackedCandidate>>(iConfig.getParameter<edm::InputTag>("packedpfcandidates"))),
-	puinfoToken_          	    (consumes<std::vector<PileupSummaryInfo> >(iConfig.getParameter<edm::InputTag>("PUInfo"))),
-	geneventToken_        	    (consumes<GenEventInfoProduct>(iConfig.getParameter<edm::InputTag>("genEventInfo"))),     
-	lheEventProductToken_       (consumes<LHEEventProduct>(iConfig.getParameter<edm::InputTag>("externallheProducer"))),     
-	genparticleToken_     	    (consumes<reco::GenParticleCollection>(iConfig.getParameter<edm::InputTag>("genparticles"))),
+  vtxToken_             	    (consumes<reco::VertexCollection>(iConfig.getParameter<edm::InputTag>("vertices"))),
+  rhoToken_             	    (consumes<double>(iConfig.getParameter<edm::InputTag>("rho"))),
+  packedpfcandidatesToken_    (consumes<std::vector<pat::PackedCandidate>>(iConfig.getParameter<edm::InputTag>("packedpfcandidates"))),
+  puinfoToken_          	    (consumes<std::vector<PileupSummaryInfo> >(iConfig.getParameter<edm::InputTag>("PUInfo"))),
+  geneventToken_        	    (consumes<GenEventInfoProduct>(iConfig.getParameter<edm::InputTag>("genEventInfo"))),     
+  lheEventProductToken_       (consumes<LHEEventProduct>(iConfig.getParameter<edm::InputTag>("externallheProducer"))),     
+  genparticleToken_     	    (consumes<reco::GenParticleCollection>(iConfig.getParameter<edm::InputTag>("genparticles"))),
 	
-	jetToken_             	    (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("jets"))),
-	fatjetToken_          	    (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("fatjets"))),
-	prunedjetToken_	      	    (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("prunedjets"))),
-	softdropjetToken_     	    (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("softdropjets"))),
-	trimmedjetToken_	    (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("trimmedjets"))),
-	puppijetToken_	            (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("puppijets"))),
-	genJetToken_	      	    (consumes<reco::GenJetCollection>(iConfig.getParameter<edm::InputTag>("genJets"))),
-        genJetAK8Token_	      	    (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("genJetsAK8"))),
+  jetToken_             	    (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("jets"))),
+  fatjetToken_          	    (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("fatjets"))),
+  prunedjetToken_	      	    (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("prunedjets"))),
+  softdropjetToken_     	    (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("softdropjets"))),
+  trimmedjetToken_	    (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("trimmedjets"))),
+  puppijetToken_	            (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("puppijets"))),
+  genJetToken_	      	    (consumes<reco::GenJetCollection>(iConfig.getParameter<edm::InputTag>("genJets"))),
+  genJetAK8Token_	      	    (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("genJetsAK8"))),
 	
-	flavourToken_	      	    (consumes<reco::JetFlavourMatchingCollection>(iConfig.getParameter<edm::InputTag>("subjetflavour"))),
+  flavourToken_	      	    (consumes<reco::JetFlavourMatchingCollection>(iConfig.getParameter<edm::InputTag>("subjetflavour"))),
 
-	photonToken_                      (consumes<edm::View<pat::Photon> >              (iConfig.getParameter<edm::InputTag>("photons")))                                    ,
-	phoLooseIdMapToken_               (consumes<edm::ValueMap<bool> >                  (iConfig.getParameter<edm::InputTag>("phoLooseIdMap")))                              ,
-	phoMediumIdMapToken_              (consumes<edm::ValueMap<bool> >                  (iConfig.getParameter<edm::InputTag>("phoMediumIdMap")))                             ,
-	phoTightIdMapToken_               (consumes<edm::ValueMap<bool> >                  (iConfig.getParameter<edm::InputTag>("phoTightIdMap")))                              ,
-	phoMvaValuesMapToken_             (consumes<edm::ValueMap<float> >                 (iConfig.getParameter<edm::InputTag>("phoMvaValuesMap")))                               ,
-	phoMvaCategoriesMapToken_         (consumes<edm::ValueMap<int> >                   (iConfig.getParameter<edm::InputTag>("phoMvaCategoriesMap")))                           ,
-	phoVerboseIdFlag_                                                                  (iConfig.getParameter<bool>         ("phoIdVerbose"))                                ,
+  photonToken_                      (consumes<edm::View<pat::Photon> >              (iConfig.getParameter<edm::InputTag>("photons")))                                    ,
+  phoLooseIdMapToken_               (consumes<edm::ValueMap<bool> >                  (iConfig.getParameter<edm::InputTag>("phoLooseIdMap")))                              ,
+  phoMediumIdMapToken_              (consumes<edm::ValueMap<bool> >                  (iConfig.getParameter<edm::InputTag>("phoMediumIdMap")))                             ,
+  phoTightIdMapToken_               (consumes<edm::ValueMap<bool> >                  (iConfig.getParameter<edm::InputTag>("phoTightIdMap")))                              ,
+  phoMvaValuesMapToken_             (consumes<edm::ValueMap<float> >                 (iConfig.getParameter<edm::InputTag>("phoMvaValuesMap")))                               ,
+  phoMvaCategoriesMapToken_         (consumes<edm::ValueMap<int> >                   (iConfig.getParameter<edm::InputTag>("phoMvaCategoriesMap")))                           ,
+  phoVerboseIdFlag_                                                                  (iConfig.getParameter<bool>         ("phoIdVerbose"))                                ,
 
 
 
-	muonToken_	      	    (consumes<pat::MuonCollection>(iConfig.getParameter<edm::InputTag>("muons"))),
-	mvaValuesMapToken_          (consumes<edm::ValueMap<float> >(iConfig.getParameter<edm::InputTag>("mvaValuesMap"))),
-	//mvaCategoriesMapToken_      (consumes<edm::ValueMap<int> >(iConfig.getParameter<edm::InputTag>("mvaCategoriesMap"))),
-	ebRecHitsToken_             (consumes<edm::SortedCollection<EcalRecHit,edm::StrictWeakOrdering<EcalRecHit>>>(iConfig.getParameter<edm::InputTag>("ebRecHits"))),
+  muonToken_	      	    (consumes<pat::MuonCollection>(iConfig.getParameter<edm::InputTag>("muons"))),
+  mvaValuesMapToken_          (consumes<edm::ValueMap<float> >(iConfig.getParameter<edm::InputTag>("mvaValuesMap"))),
+  //mvaCategoriesMapToken_      (consumes<edm::ValueMap<int> >(iConfig.getParameter<edm::InputTag>("mvaCategoriesMap"))),
+  ebRecHitsToken_             (consumes<edm::SortedCollection<EcalRecHit,edm::StrictWeakOrdering<EcalRecHit>>>(iConfig.getParameter<edm::InputTag>("ebRecHits"))),
 
-	tauToken_	      	    (consumes<pat::TauCollection>(iConfig.getParameter<edm::InputTag>("taus"))),
-	tauBoostedTauToken_	    (consumes<pat::TauCollection>(iConfig.getParameter<edm::InputTag>("tausBoostedTau"))),
+  tauToken_	      	    (consumes<pat::TauCollection>(iConfig.getParameter<edm::InputTag>("taus"))),
+  tauBoostedTauToken_	    (consumes<pat::TauCollection>(iConfig.getParameter<edm::InputTag>("tausBoostedTau"))),
 
-	metToken_	      	    (consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("mets"))),
-	metpuppiToken_	      	    (consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("mets_puppi"))),
-	metmvaToken_	      	    (consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("mets_mva"))),
-	metSigToken_	      	    (consumes<double>(edm::InputTag("METSignificance","METSignificance"))),
-	metCovToken_	      	    (consumes<math::Error<2>::type>(edm::InputTag("METSignificance","METCovariance"))),
+  metToken_	      	    (consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("mets"))),
+  metpuppiToken_	      	    (consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("mets_puppi"))),
+  metmvaToken_	      	    (consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("mets_mva"))),
+  metSigToken_	      	    (consumes<double>(edm::InputTag("METSignificance","METSignificance"))),
+  metCovToken_	      	    (consumes<math::Error<2>::type>(edm::InputTag("METSignificance","METCovariance"))),
 
-	jetForMetCorrToken_   	    (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("jetsForMetCorr"))),
+  jetForMetCorrToken_   	    (consumes<pat::JetCollection>(iConfig.getParameter<edm::InputTag>("jetsForMetCorr"))),
 
-	triggerToken_	      	    (consumes<edm::TriggerResults>(iConfig.getParameter<edm::InputTag>("HLT"))),
-	triggerObjects_	      	    (consumes<pat::TriggerObjectStandAloneCollection>(iConfig.getParameter<edm::InputTag>("triggerobjects"))),
-	triggerPrescales_     	    (consumes<pat::PackedTriggerPrescales>(iConfig.getParameter<edm::InputTag>("triggerprescales"))),
-        noiseFilterToken_     	    (consumes<edm::TriggerResults>(iConfig.getParameter<edm::InputTag>("noiseFilter"))),
-        HBHENoiseFilterLooseResultToken_(consumes<bool>(iConfig.getParameter<edm::InputTag>("noiseFilterSelection_HBHENoiseFilterLoose"))),
-        HBHENoiseFilterTightResultToken_(consumes<bool>(iConfig.getParameter<edm::InputTag>("noiseFilterSelection_HBHENoiseFilterTight"))),
-        HBHENoiseIsoFilterResultToken_(consumes<bool>(iConfig.getParameter<edm::InputTag>("noiseFilterSelection_HBHENoiseIsoFilter")))
+  triggerToken_	      	    (consumes<edm::TriggerResults>(iConfig.getParameter<edm::InputTag>("HLT"))),
+  triggerObjects_	      	    (consumes<pat::TriggerObjectStandAloneCollection>(iConfig.getParameter<edm::InputTag>("triggerobjects"))),
+  triggerPrescales_     	    (consumes<pat::PackedTriggerPrescales>(iConfig.getParameter<edm::InputTag>("triggerprescales"))),
+  noiseFilterToken_     	    (consumes<edm::TriggerResults>(iConfig.getParameter<edm::InputTag>("noiseFilter"))),
+  HBHENoiseFilterLooseResultToken_(consumes<bool>(iConfig.getParameter<edm::InputTag>("noiseFilterSelection_HBHENoiseFilterLoose"))),
+  HBHENoiseFilterTightResultToken_(consumes<bool>(iConfig.getParameter<edm::InputTag>("noiseFilterSelection_HBHENoiseFilterTight"))),
+  HBHENoiseIsoFilterResultToken_(consumes<bool>(iConfig.getParameter<edm::InputTag>("noiseFilterSelection_HBHENoiseIsoFilter")))
 
 {
 
 
   /*=======================================================================================*/
   edm::Service<TFileService> fs;
-     _hCounter = fs->make<TH1D>("hCounter", "Events counter", 5,0,5);
+  _hCounter = fs->make<TH1D>("hCounter", "Events counter", 5,0,5);
   TTree* tree = fs->make<TTree>( "tree", "tree" );
   
   std::map< std::string, bool > runFlags;
@@ -110,7 +110,7 @@ Ntuplizer::Ntuplizer(const edm::ParameterSet& iConfig):
   runFlags["doMETSVFIT"] = iConfig.getParameter<bool>("doMETSVFIT");
   runFlags["doMVAMET"] = iConfig.getParameter<bool>("doMVAMET");
   runFlags["doPuppiRecluster"] = iConfig.getParameter<edm::InputTag>("puppijets").label()!="";
-  //runFlags["doMultipleTauMVAversions"] = iConfig.getParameter<bool>("doMultipleTauMVAversions");
+  runFlags["doMultipleTauMVAversions"] = iConfig.getParameter<bool>("doMultipleTauMVAversions");
 
   if(runFlags["doElectrons"]){
     electronToken_	      	    =consumes<edm::View<pat::Electron> >(iConfig.getParameter<edm::InputTag>("electrons"));
@@ -146,29 +146,29 @@ Ntuplizer::Ntuplizer(const edm::ParameterSet& iConfig):
     std::string tmpString = "";
     std::vector<std::string> tmpVec = iConfig.getParameter<std::vector<std::string> >("jecAK8chsPayloadNames");
     for( unsigned int v = 0; v < tmpVec.size(); ++v ){
-       tmpString = jecpath + tmpVec[v];
-       jecAK8Labels.push_back(edm::FileInPath(tmpString).fullPath());
+      tmpString = jecpath + tmpVec[v];
+      jecAK8Labels.push_back(edm::FileInPath(tmpString).fullPath());
     }    
     jecAK8Labels.push_back( edm::FileInPath(jecpath + iConfig.getParameter<std::string>("jecAK8chsUnc")).fullPath() );
     std::vector<std::string> jecAK8GroomedLabels;
     tmpVec.clear(); tmpVec = iConfig.getParameter<std::vector<std::string> >("jecAK8GroomedchsPayloadNames");
     for( unsigned int v = 0; v < tmpVec.size(); ++v ){
-       tmpString = jecpath + tmpVec[v];
-       jecAK8GroomedLabels.push_back(edm::FileInPath(tmpString).fullPath());
+      tmpString = jecpath + tmpVec[v];
+      jecAK8GroomedLabels.push_back(edm::FileInPath(tmpString).fullPath());
     }    
     
     std::vector<std::string> jecAK8PuppiLabels;
     tmpVec.clear(); tmpVec = iConfig.getParameter<std::vector<std::string> >("jecAK8PuppiPayloadNames");
     for( unsigned int v = 0; v < tmpVec.size(); ++v ){
-       tmpString = jecpath + tmpVec[v];
-       jecAK8PuppiLabels.push_back(edm::FileInPath(tmpString).fullPath());
+      tmpString = jecpath + tmpVec[v];
+      jecAK8PuppiLabels.push_back(edm::FileInPath(tmpString).fullPath());
     }    
     
     std::vector<std::string> jecAK4chsLabels;
     tmpVec.clear(); tmpVec = iConfig.getParameter<std::vector<std::string> >("jecAK4chsPayloadNames");
     for( unsigned int v = 0; v < tmpVec.size(); ++v ){
-       tmpString = jecpath + tmpVec[v];
-       jecAK4chsLabels.push_back(edm::FileInPath(tmpString).fullPath());
+      tmpString = jecpath + tmpVec[v];
+      jecAK4chsLabels.push_back(edm::FileInPath(tmpString).fullPath());
     }
     jecAK4chsLabels.push_back( edm::FileInPath(jecpath + iConfig.getParameter<std::string>("jecAK4chsUnc")).fullPath() );
     
@@ -178,9 +178,9 @@ Ntuplizer::Ntuplizer(const edm::ParameterSet& iConfig):
     jerAK8chsFileLabels.push_back(edm::FileInPath(jecpath + iConfig.getParameter<std::string>("jerAK8chs_sf_PayloadNames")).fullPath() );
     std::vector<std::string> jerAK4chsFileLabels;
     jerAK4chsFileLabels.push_back(edm::FileInPath(jecpath + iConfig.getParameter<std::string>("jerAK4chs_res_PayloadNames")).fullPath() );
-     jerAK4chsFileLabels.push_back(edm::FileInPath(jecpath + iConfig.getParameter<std::string>("jerAK4chs_sf_PayloadNames")).fullPath() );
-     std::vector<std::string> jerAK8PuppiFileLabels;
-     jerAK8PuppiFileLabels.push_back(edm::FileInPath(jecpath + iConfig.getParameter<std::string>("jerAK8Puppi_res_PayloadNames")).fullPath() );
+    jerAK4chsFileLabels.push_back(edm::FileInPath(jecpath + iConfig.getParameter<std::string>("jerAK4chs_sf_PayloadNames")).fullPath() );
+    std::vector<std::string> jerAK8PuppiFileLabels;
+    jerAK8PuppiFileLabels.push_back(edm::FileInPath(jecpath + iConfig.getParameter<std::string>("jerAK8Puppi_res_PayloadNames")).fullPath() );
     jerAK8PuppiFileLabels.push_back(edm::FileInPath(jecpath + iConfig.getParameter<std::string>("jerAK8Puppi_sf_PayloadNames")).fullPath() );
 
     std::vector<std::string> jerAK4PuppiFileLabels;
@@ -215,8 +215,8 @@ Ntuplizer::Ntuplizer(const edm::ParameterSet& iConfig):
     std::vector<std::string> tmpVec = iConfig.getParameter<std::vector<std::string> >("jecAK4forMetCorr");
     std::string tmpString = "";
     for( unsigned int v = 0; v < tmpVec.size(); ++v ){
-       tmpString = jecpath + tmpVec[v];
-       jecAK4Labels.push_back(edm::FileInPath(tmpString).fullPath());
+      tmpString = jecpath + tmpVec[v];
+      jecAK4Labels.push_back(edm::FileInPath(tmpString).fullPath());
     }
     
     nTuplizers_["MET"] = new METsNtuplizer( metToken_          , 
@@ -251,26 +251,26 @@ Ntuplizer::Ntuplizer(const edm::ParameterSet& iConfig):
 					      runFlags     );
   }
 	 
-    if (runFlags["doPhotons"]) {
+  if (runFlags["doPhotons"]) {
         
-        std::vector<edm::EDGetTokenT<edm::ValueMap<bool> > > phoIdTokens;
-        phoIdTokens.push_back(phoLooseIdMapToken_ );
-        phoIdTokens.push_back(phoMediumIdMapToken_);
-        phoIdTokens.push_back(phoTightIdMapToken_ );
-        std::vector<edm::EDGetTokenT<edm::ValueMap<float> > > phoIdTokens1;
-        phoIdTokens1.push_back(phoMvaValuesMapToken_);
-        std::vector<edm::EDGetTokenT<edm::ValueMap<int> > > phoIdTokens2;
-        phoIdTokens2.push_back(phoMvaCategoriesMapToken_);
+    std::vector<edm::EDGetTokenT<edm::ValueMap<bool> > > phoIdTokens;
+    phoIdTokens.push_back(phoLooseIdMapToken_ );
+    phoIdTokens.push_back(phoMediumIdMapToken_);
+    phoIdTokens.push_back(phoTightIdMapToken_ );
+    std::vector<edm::EDGetTokenT<edm::ValueMap<float> > > phoIdTokens1;
+    phoIdTokens1.push_back(phoMvaValuesMapToken_);
+    std::vector<edm::EDGetTokenT<edm::ValueMap<int> > > phoIdTokens2;
+    phoIdTokens2.push_back(phoMvaCategoriesMapToken_);
         
-        nTuplizers_["photons"] = new PhotonsNtuplizer( nBranches_,
-                                                      photonToken_        ,
-                                                      vtxToken_           ,
-                                                      rhoToken_           ,
-                                                      //fixedGridRhoToken_  ,
-                                                      phoIdTokens         ,
-                                                      phoIdTokens1        ,
-                                                      phoIdTokens2        );
-    }
+    nTuplizers_["photons"] = new PhotonsNtuplizer( nBranches_,
+						   photonToken_        ,
+						   vtxToken_           ,
+						   rhoToken_           ,
+						   //fixedGridRhoToken_  ,
+						   phoIdTokens         ,
+						   phoIdTokens1        ,
+						   phoIdTokens2        );
+  }
 					      
   if (runFlags["doElectrons"]) {
     
@@ -315,13 +315,13 @@ Ntuplizer::Ntuplizer(const edm::ParameterSet& iConfig):
   }
 
   if (runFlags["doTaus"]) {
-     nTuplizers_["taus"] = new TausNtuplizer( tauToken_      ,  
-                                              tauBoostedTauToken_,  
-					      rhoToken_      ,  
-					      packedpfcandidatesToken_,
-					      vtxToken_      ,  
-					      nBranches_     , 
-                                              runFlags      ); 
+    nTuplizers_["taus"] = new TausNtuplizer( tauToken_      ,  
+					     tauBoostedTauToken_,  
+					     rhoToken_      ,  
+					     packedpfcandidatesToken_,
+					     vtxToken_      ,  
+					     nBranches_     , 
+					     runFlags      ); 
   }
   /*=======================================================================================*/    
   if ( runFlags["runOnMC"] ){
@@ -357,36 +357,36 @@ Ntuplizer::Ntuplizer(const edm::ParameterSet& iConfig):
 Ntuplizer::~Ntuplizer()
 {
     
-    for( std::map<std::string,CandidateNtuplizer*>::iterator it = nTuplizers_.begin(); it != nTuplizers_.end(); ++it )
-        delete it->second;
+  for( std::map<std::string,CandidateNtuplizer*>::iterator it = nTuplizers_.begin(); it != nTuplizers_.end(); ++it )
+    delete it->second;
     
-    nTuplizers_.clear();
+  nTuplizers_.clear();
     
-    delete nBranches_;
+  delete nBranches_;
     
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
 void Ntuplizer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup){
     
-    _hCounter->Fill(0.,1);
+  _hCounter->Fill(0.,1);
     
-    nBranches_->reset();
+  nBranches_->reset();
     
-    edm::Handle<reco::VertexCollection> vertices;
-    iEvent.getByToken(vtxToken_, vertices);
-    if( vertices->empty() ) return; // skip the event if no PV found
+  edm::Handle<reco::VertexCollection> vertices;
+  iEvent.getByToken(vtxToken_, vertices);
+  if( vertices->empty() ) return; // skip the event if no PV found
     
-    nBranches_->EVENT_event     = iEvent.id().event();
-    nBranches_->EVENT_run       = iEvent.id().run();
-    nBranches_->EVENT_lumiBlock = iEvent.id().luminosityBlock();  
+  nBranches_->EVENT_event     = iEvent.id().event();
+  nBranches_->EVENT_run       = iEvent.id().run();
+  nBranches_->EVENT_lumiBlock = iEvent.id().luminosityBlock();  
     
-    for( std::map<std::string,CandidateNtuplizer*>::iterator it = nTuplizers_.begin(); it != nTuplizers_.end(); ++it )
-        (it->second)->fillBranches( iEvent, iSetup );
+  for( std::map<std::string,CandidateNtuplizer*>::iterator it = nTuplizers_.begin(); it != nTuplizers_.end(); ++it )
+    (it->second)->fillBranches( iEvent, iSetup );
     
-    nBranches_->fillTree();
+  nBranches_->fillTree();
     
-    nBranches_->reset();    
+  nBranches_->reset();    
     
 }
 
@@ -420,11 +420,11 @@ void Ntuplizer::endLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup 
 
 ///////////////////////////////////////////////////////////////////////////////////
 void Ntuplizer::fillDescriptions(edm::ConfigurationDescriptions& descriptions) {
-    //The following says we do not know what parameters are allowed so do no validation
-    // Please change this to state exactly what you do use, even if it is no parameters
-    edm::ParameterSetDescription desc;
-    desc.setUnknown();
-    descriptions.addDefault(desc);
+  //The following says we do not know what parameters are allowed so do no validation
+  // Please change this to state exactly what you do use, even if it is no parameters
+  edm::ParameterSetDescription desc;
+  desc.setUnknown();
+  descriptions.addDefault(desc);
 }
 
 //define this as a plug-in
